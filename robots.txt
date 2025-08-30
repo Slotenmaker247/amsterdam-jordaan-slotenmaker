@@ -1,3 +1,7 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://slotenmakeramsterdamwest.amsterdam/sitemap.xml
+User-agent: *
+Allow: /
 Sitemap: https://slotenmakeramsterdamwest.amsterdam/sitemap.xml
