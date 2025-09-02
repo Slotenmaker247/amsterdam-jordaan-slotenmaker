@@ -29,6 +29,13 @@
         allow_ad_personalization_signals: false,
       });
     </script>
+    <style>
+      img {
+        -webkit-user-drag: none;
+        -webkit-touch-callout: none;
+        user-select: none;
+      }
+    </style>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="index, follow" />
@@ -62,22 +69,20 @@
     <meta name="format-detection" content="telephone=no" />
 
     <!-- SEO Meta -->
-    <title>
-      Slotenmaker Amsterdam West 24/7 | Sneller Dan Een Ferrari Naar Je Deur
-    </title>
+    <title>24/7 Slotenmaker Amsterdam West - Binnen 20 Minuten</title>
     <meta
       name="description"
-      content="Slotenmaker Amsterdam West 24/7: noodservice, slot vervangen en inbraakschadeherstel. Sneller dan een Ferrari naar je deur. Bel nu 0610121987."
+      content="24/7 slotenmaker in Amsterdam West. Snel ter plekke binnen 20 minuten. Bel 0610121987."
     />
 
     <!-- Open Graph -->
     <meta
       property="og:title"
-      content="Slotenmaker Amsterdam West 24/7 | Sneller Dan Een Ferrari Naar Je Deur"
+      content="24/7 Slotenmaker Amsterdam West - Binnen 20 Minuten"
     />
     <meta
       property="og:description"
-      content="Slotenmaker Amsterdam West 24/7: noodservice, slot vervangen en inbraakschadeherstel. Sneller dan een Ferrari naar je deur. Bel nu 0610121987."
+      content="24/7 slotenmaker in Amsterdam West. Binnen 20 minuten op locatie. Bel 0610121987."
     />
     <meta
       property="og:url"
@@ -1864,6 +1869,32 @@
         } catch (e) {
           // fail silently
         }
+      })();
+    </script>
+    <script>
+      // Disable right-click globally and block image drag/save basics
+      (function () {
+        try {
+          document.addEventListener("contextmenu", function (e) {
+            e.preventDefault();
+          });
+          document.addEventListener(
+            "dragstart",
+            function (e) {
+              if (e.target && e.target.tagName === "IMG") {
+                e.preventDefault();
+              }
+            },
+            true
+          );
+          // Prevent pointer down saving on images (mobile long-press)
+          document.querySelectorAll("img").forEach(function (img) {
+            img.setAttribute("draggable", "false");
+            img.addEventListener("pointerdown", function (ev) {
+              ev.preventDefault();
+            });
+          });
+        } catch (_) {}
       })();
     </script>
   </body>
