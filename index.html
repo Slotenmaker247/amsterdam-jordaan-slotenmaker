@@ -11,9 +11,27 @@
       function gtag() {
         dataLayer.push(arguments);
       }
+      gtag("consent", "default", {
+        ad_storage: "denied",
+        analytics_storage: "denied",
+        ad_user_data: "denied",
+        ad_personalization: "denied",
+      });
+
+      window.updateConsent = function (consentUpdate) {
+        gtag("consent", "update", consentUpdate);
+      };
+
       gtag("js", new Date());
 
-      gtag("config", "G-K6KVYMX5JX", { anonymize_ip: true });
+      gtag("config", "G-K6KVYMX5JX", {
+        anonymize_ip: true,
+        allow_ad_personalization_signals: false,
+      });
+      gtag("config", "G-T0J9GZGMV3", {
+        anonymize_ip: true,
+        allow_ad_personalization_signals: false,
+      });
     </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
