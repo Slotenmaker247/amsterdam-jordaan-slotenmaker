@@ -37,7 +37,10 @@
       }
     </style>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
     <meta name="robots" content="index, follow" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="author" content="Slotenmaker Amsterdam West" />
@@ -88,6 +91,17 @@
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Slotenmaker Amsterdam West" />
     <meta property="og:locale" content="nl_NL" />
+    <link
+      rel="preconnect"
+      href="https://www.googletagmanager.com"
+      crossorigin
+    />
+    <link
+      rel="preconnect"
+      href="https://www.google-analytics.com"
+      crossorigin
+    />
+    <link rel="preconnect" href="https://maps.google.com" />
     <meta
       property="og:image"
       content="https://slotenmakeramsterdamwest.amsterdam/assets/slotenmaker-amsterdam-west-deur-openen.jpg"
@@ -499,14 +513,14 @@
       .logo-text {
         color: #000;
         font-weight: bold;
-        font-size: 11px;
+        font-size: clamp(11px, 2.5vw, 14px);
         letter-spacing: 1px;
         text-align: center;
         line-height: 1.2;
       }
 
       .hero-title {
-        font-size: 3.5rem;
+        font-size: clamp(2rem, 6vw, 3.5rem);
         background: linear-gradient(45deg, #ff0000, #ffd700);
         -webkit-background-clip: text;
         background-clip: text;
@@ -516,7 +530,7 @@
       }
 
       .tagline {
-        font-size: 1.8rem;
+        font-size: clamp(1.1rem, 4vw, 1.8rem);
         color: #ffd700;
         margin-bottom: 30px;
         font-style: italic;
@@ -527,7 +541,7 @@
         background: linear-gradient(135deg, #ff0000, #8b0000);
         color: #fff;
         padding: 20px 40px;
-        font-size: 1.5rem;
+        font-size: clamp(1rem, 4.2vw, 1.5rem);
         font-weight: bold;
         text-decoration: none;
         border-radius: 50px;
@@ -542,6 +556,14 @@
         }
         to {
           box-shadow: 0 15px 40px rgba(255, 0, 0, 0.8);
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          animation: none !important;
+          transition: none !important;
+          scroll-behavior: auto !important;
         }
       }
 
@@ -1263,6 +1285,7 @@
         <a
           href="https://wa.me/31610121987?text=Hoi%2C+ik+heb+spoed+op+WG-Plein+100"
           class="cta-button"
+          aria-label="Start WhatsApp-chat met Slotenmaker Amsterdam West"
           style="margin-left: 10px"
           >💬 WhatsApp</a
         >
@@ -1838,6 +1861,7 @@
       <a
         href="https://wa.me/31610121987?text=Hoi%2C+ik+heb+spoed+op+WG-Plein+100"
         class="sticky-btn"
+        aria-label="WhatsApp bericht sturen naar Slotenmaker Amsterdam West"
         >💬 WhatsApp</a
       >
     </div>
