@@ -1,0 +1,18 @@
+[build]
+  publish = "."
+  command = ""
+
+[[plugins]]
+  package = "@netlify/plugin-minify-html"
+
+[[headers]]
+  for = "/index.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# Force HTTPS
+[[redirects]]
+  from = "http://slotenmakeramsterdamwest.amsterdam/*"
+  to = "https://slotenmakeramsterdamwest.amsterdam/:splat"
+  status = 301
+  force = true
