@@ -1,11 +1,7 @@
 <!DOCTYPE html>
 <html lang="nl">
   <head>
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-K6KVYMX5JX"
-    ></script>
+    <!-- Google tag (gtag.js) deferred loader -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
@@ -22,12 +18,24 @@
         gtag("consent", "update", consentUpdate);
       };
 
-      gtag("js", new Date());
-
-      gtag("config", "G-K6KVYMX5JX", {
-        anonymize_ip: true,
-        allow_ad_personalization_signals: false,
-      });
+      // Load GA script only after consent
+      window.loadAnalytics = function () {
+        try {
+          if (window.__gaLoaded) return;
+          var s = document.createElement("script");
+          s.async = true;
+          s.src = "https://www.googletagmanager.com/gtag/js?id=G-K6KVYMX5JX";
+          s.onload = function () {
+            window.__gaLoaded = true;
+            gtag("js", new Date());
+            gtag("config", "G-K6KVYMX5JX", {
+              anonymize_ip: true,
+              allow_ad_personalization_signals: false,
+            });
+          };
+          document.head.appendChild(s);
+        } catch (e) {}
+      };
     </script>
     <style>
       img {
@@ -75,14 +83,14 @@
     <title>SLOTENMAKER AMSTERDAM WEST</title>
     <meta
       name="description"
-      content="Buitengesloten in Amsterdam West? Professionele slotenmaker binnen 20 minuten bij u. 24/7 bereikbaar, vanaf €79. Bel direct: 0610121987"
+      content="Buitengesloten in Amsterdam West? Professionele slotenmaker binnen 30 minuten bij u. 24/7 bereikbaar, vanaf €79. Bel direct: 0610121987"
     />
 
     <!-- Open Graph -->
     <meta property="og:title" content="SLOTENMAKER AMSTERDAM WEST" />
     <meta
       property="og:description"
-      content="Buitengesloten in Amsterdam West? Professionele slotenmaker binnen 20 minuten bij u. 24/7 bereikbaar, vanaf €79. Bel direct: 0610121987"
+      content="Buitengesloten in Amsterdam West? Professionele slotenmaker binnen 30 minuten bij u. 24/7 bereikbaar, vanaf €79. Bel direct: 0610121987"
     />
     <meta
       property="og:url"
@@ -128,7 +136,7 @@
     <meta name="twitter:title" content="SLOTENMAKER AMSTERDAM WEST" />
     <meta
       name="twitter:description"
-      content="Buitengesloten in Amsterdam West? Professionele slotenmaker binnen 20 minuten bij u. 24/7 bereikbaar, vanaf €79. Bel direct: 0610121987"
+      content="Buitengesloten in Amsterdam West? Professionele slotenmaker binnen 30 minuten bij u. 24/7 bereikbaar, vanaf €79. Bel direct: 0610121987"
     />
     <meta
       name="twitter:image"
@@ -147,10 +155,10 @@
         "@id": "https://slotenmakeramsterdamwest.amsterdam/#locksmith",
         "name": "Slotenmaker Amsterdam West",
         "alternateName": "24/7 Spoedservice Slotenmaker Amsterdam West",
-        "description": "24/7 Professionele slotenmaker in Amsterdam West. Specialist in buitensluitingen, slotvervanging en inbraakpreventie. Binnen 20 minuten ter plaatse.",
+        "description": "24/7 Professionele slotenmaker in Amsterdam West. Specialist in buitensluitingen, slotvervanging en inbraakpreventie. Binnen 30 minuten ter plaatse.",
         "url": "https://slotenmakeramsterdamwest.amsterdam",
         "telephone": "+31610121987",
-        "email": "info@slotenmakeramsterdamwest.amsterdam",
+
         "priceRange": "€79-€500",
         "currenciesAccepted": "EUR",
         "paymentAccepted": "Cash, Credit Card, Debit Card, Bank Transfer",
@@ -262,7 +270,7 @@
               "name": "Johan K."
             },
             "datePublished": "2024-12-15",
-            "reviewBody": "Binnen 15 minuten ter plaatse en probleem snel opgelost. Top service!"
+            "reviewBody": "Binnen 30 minuten ter plaatse en probleem snel opgelost. Top service!"
           },
           {
             "@type": "Review",
@@ -395,7 +403,7 @@
             "name": "Hoe snel kunnen jullie ter plaatse zijn?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Wij zijn binnen 20 minuten ter plaatse in Amsterdam West. Onze monteurs staan 24/7 paraat voor spoedgevallen."
+              "text": "Wij zijn binnen 30 minuten ter plaatse in Amsterdam West. Onze monteurs staan 24/7 paraat voor spoedgevallen."
             }
           },
           {
@@ -1289,7 +1297,7 @@
         </div>
 
         <h1 class="hero-title">SLOTENMAKER AMSTERDAM WEST</h1>
-        <p class="tagline">Binnen 20 minuten bij je deur</p>
+        <p class="tagline">Binnen 30 minuten bij je deur</p>
 
         <div class="phone-number">
           📞 <a href="tel:+31610121987">0610121987</a>
@@ -1311,7 +1319,7 @@
         >
 
         <div style="margin-top: 30px; color: #ffd700; font-size: 1.2rem">
-          ⚡ 24/7 Beschikbaar | 🏃‍♂️ Binnen 15 minuten ter plaatse
+          ⚡ 24/7 Beschikbaar | 🏃‍♂️ Binnen 30 minuten ter plaatse
         </div>
       </div>
     </section>
@@ -1338,8 +1346,7 @@
         </p>
         <p>
           Verantwoordelijke: Slotenmaker Amsterdam West, WG-Plein 100, 1054 SC
-          Amsterdam. Voor vragen of inzage:
-          slotenmakerinamsterdamwest@gmail.com.
+          Amsterdam. Voor vragen of inzage: telefonisch of via WhatsApp.
         </p>
         <div class="privacy-actions">
           <button
@@ -1368,7 +1375,7 @@
               gezocht?</strong
             >
             Onze ervaren slotenmakers staan 24/7 klaar voor noodopeningen in De
-            Baarsjes, Bos en Lommer, Oud-West en Nieuw-West. Binnen 20 minuten
+            Baarsjes, Bos en Lommer, Oud-West en Nieuw-West. Binnen 30 minuten
             ter plaatse - ook met nachttarief!
           </p>
         </div>
@@ -1427,7 +1434,7 @@
             <h4>🚪 Sleutel Binnen Vergeten</h4>
             <p>
               Wanneer je je <strong>sleutel binnen hebt vergeten</strong>, zijn
-              we er binnen 20 minuten. Onze lokale expertise in Amsterdam West
+              we er binnen 30 minuten. Onze lokale expertise in Amsterdam West
               zorgt ervoor dat we precies weten hoe we jouw specifieke slot het
               beste kunnen openen.
             </p>
@@ -1446,10 +1453,10 @@
         <div class="seo-response-times">
           <h3>⏱️ Onze Responstijden Amsterdam West:</h3>
           <ul>
-            <li><strong>De Baarsjes</strong>: 10-15 minuten</li>
-            <li><strong>Oud-West</strong>: 10-15 minuten</li>
-            <li><strong>Bos en Lommer</strong>: 15-20 minuten</li>
-            <li><strong>Nieuw-West</strong>: 15-25 minuten</li>
+            <li><strong>De Baarsjes</strong>: 30 minuten</li>
+            <li><strong>Oud-West</strong>: 30 minuten</li>
+            <li><strong>Bos en Lommer</strong>: 30 minuten</li>
+            <li><strong>Nieuw-West</strong>: 30 minuten</li>
           </ul>
         </div>
       </div>
@@ -1510,7 +1517,7 @@
           <div class="feature-card">
             <div class="feature-icon">⚡</div>
             <h3 class="feature-title">Razendsnel</h3>
-            <p>Binnen 15 minuten ter plaatse in heel Amsterdam West</p>
+            <p>Binnen 30 minuten ter plaatse in heel Amsterdam West</p>
           </div>
 
           <div class="feature-card">
@@ -1533,7 +1540,7 @@
 
           <div class="feature-card">
             <div class="feature-icon">🛠️</div>
-            <h3 class="feature-title">Schadeloos</h3>
+            <h3 class="feature-title">Schadevrij</h3>
             <p>Openen zonder schade aan deur of kozijn gegarandeerd</p>
           </div>
 
@@ -1670,7 +1677,7 @@
           <div class="faq-item">
             <h3>Q: Hoe snel zijn jullie in Amsterdam West?</h3>
             <p>
-              A: Gemiddeld binnen 20 minuten, afhankelijk van je exacte locatie
+              A: Gemiddeld binnen 30 minuten, afhankelijk van je exacte locatie
               en verkeer.
             </p>
           </div>
@@ -1722,8 +1729,8 @@
               - Jan Jansen, Amsterdam West
             </div>
             <p class="review-text" itemprop="reviewBody">
-              "De slotenmaker kwam binnen 10 minuten! Ongelofelijk snel en
-              professioneel. Mijn deur werd schadeloos geopend."
+              "De slotenmaker kwam binnen 30 minuten! Ongelofelijk snel en
+              professioneel. Mijn deur werd schadevrij geopend."
             </p>
             <meta itemprop="reviewRating" content="5" />
           </div>
@@ -1738,7 +1745,7 @@
               - Meneer Bakker, Amsterdam West
             </div>
             <p class="review-text" itemprop="reviewBody">
-              "Middernacht gebeld en ze waren er binnen 15 minuten. Mijn slot
+              "Middernacht gebeld en ze waren er binnen 30 minuten. Mijn slot
               was kapot en ze hebben het direct gerepareerd. Zeer tevreden!"
             </p>
             <meta itemprop="reviewRating" content="5" />
@@ -1777,7 +1784,7 @@
 
           <div class="contact-item">
             <div class="contact-icon">⏰</div>
-            <div class="contact-text">15 Minuten</div>
+            <div class="contact-text">30 Minuten</div>
             <p style="color: #ffd700; margin-top: 10px">
               Gemiddelde aanrijtijd
             </p>
@@ -1798,8 +1805,54 @@
           📞 BEL NU: 0610121987
         </a>
 
+        <div style="margin-top: 40px"></div>
+        <h3 class="section-title" style="margin-bottom: 20px">
+          Contactformulier
+        </h3>
+        <form id="contactForm" class="contact-form" novalidate>
+          <div
+            style="display: grid; gap: 12px; max-width: 700px; margin: 0 auto"
+          >
+            <label>
+              <span>Naam</span>
+              <input type="text" name="name" required aria-required="true" />
+            </label>
+            <label>
+              <span>Telefoonnummer</span>
+              <input
+                type="tel"
+                name="phone"
+                required
+                aria-required="true"
+                pattern="[0-9+\-\s]{6,}"
+              />
+            </label>
+            <label>
+              <span>Bericht</span>
+              <textarea
+                name="message"
+                rows="4"
+                required
+                aria-required="true"
+              ></textarea>
+            </label>
+            <button
+              type="submit"
+              class="cta-button"
+              style="width: fit-content; margin: 10px auto 0"
+            >
+              Versturen
+            </button>
+            <p
+              id="formFeedback"
+              role="status"
+              style="text-align: center; color: #ffd700; display: none"
+            ></p>
+          </div>
+        </form>
+
         <div style="margin-top: 30px; font-size: 1.3rem; color: #ffd700">
-          ⚡ Binnen 15 minuten ter plaatse | 🔓 Schadeloos openen | 💯 100%
+          ⚡ Binnen 30 minuten ter plaatse | 🔓 Schadevrij openen | 💯 100%
           betrouwbaar
         </div>
         <div class="map-embed" style="max-width: 800px; margin: 30px auto 0">
@@ -1828,14 +1881,7 @@
             >0610121987</a
           >
         </div>
-        <div class="footer-info">
-          <strong>Email:</strong>
-          <a
-            href="mailto:slotenmakerinamsterdamwest@gmail.com"
-            style="color: #ccc; text-decoration: none"
-            >slotenmakerinamsterdamwest@gmail.com</a
-          >
-        </div>
+
         <div class="footer-info">
           <strong>Website:</strong>
           <a
@@ -1854,7 +1900,7 @@
           "
         >
           <p>
-            © 2025 Slotenmaker Amsterdam West - Binnen 20 minuten bij je deur
+            © 2025 Slotenmaker Amsterdam West - Binnen 30 minuten bij je deur
           </p>
           <p style="margin-top: 10px">
             🔑 Uw vertrouwde slotenmaker in Amsterdam West | 24/7 Service
@@ -1936,6 +1982,13 @@
               gtag("event", name, params || {});
             }
           };
+          var showFeedback = function (msg, isError) {
+            var el = document.getElementById("formFeedback");
+            if (!el) return;
+            el.style.display = "block";
+            el.style.color = isError ? "#ff6b6b" : "#ffd700";
+            el.textContent = msg;
+          };
           document.querySelectorAll('a[href^="tel:"]').forEach(function (link) {
             link.addEventListener("click", function () {
               track("click_tel", { method: "tel", href: this.href });
@@ -1951,6 +2004,33 @@
                 });
               });
             });
+
+          // Contact form handling -> open WhatsApp met ingevulde boodschap
+          var form = document.getElementById("contactForm");
+          if (form) {
+            form.addEventListener("submit", function (e) {
+              e.preventDefault();
+              var name = (
+                form.querySelector('[name="name"]').value || ""
+              ).trim();
+              var phone = (
+                form.querySelector('[name="phone"]').value || ""
+              ).trim();
+              var message = (
+                form.querySelector('[name="message"]').value || ""
+              ).trim();
+              if (!name || !phone || !message) {
+                showFeedback("Vul alle velden in.", true);
+                return;
+              }
+              var text =
+                "Naam: " + name + "\nTel: " + phone + "\nBericht: " + message;
+              var wa =
+                "https://wa.me/31610121987?text=" + encodeURIComponent(text);
+              track("submit_contact_form", { via: "whatsapp" });
+              window.location.href = wa;
+            });
+          }
         } catch (e) {}
       })();
 
@@ -1994,6 +2074,11 @@
           var consent = localStorage.getItem("cookieConsent");
           if (consent) {
             hideBanner();
+            // If consent was previously given, allow analytics and load
+            window.updateConsent({ analytics_storage: "granted" });
+            if (typeof window.loadAnalytics === "function") {
+              window.loadAnalytics();
+            }
           } else if (banner) {
             banner.style.display = "block";
           }
@@ -2001,6 +2086,11 @@
             var accept = function () {
               localStorage.setItem("cookieConsent", "essential-ok");
               hideBanner();
+              // Grant analytics on accept and load GA
+              window.updateConsent({ analytics_storage: "granted" });
+              if (typeof window.loadAnalytics === "function") {
+                window.loadAnalytics();
+              }
             };
             btn.addEventListener("click", accept);
             btn.addEventListener("keydown", function (e) {
