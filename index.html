@@ -1062,6 +1062,12 @@
         border-bottom: none;
       }
 
+      /* Render performance: avoid rendering below-the-fold until needed */
+      .defer-visibility {
+        content-visibility: auto;
+        contain-intrinsic-size: 1px 1000px;
+      }
+
       @media (max-width: 768px) {
         .seo-main-title {
           font-size: 2rem;
@@ -1462,7 +1468,7 @@
       </div>
     </section>
 
-    <section class="services-section">
+    <section class="services-section defer-visibility">
       <div class="container">
         <h2 class="section-title">🔧 Onze Services</h2>
         <div class="services-grid">
@@ -1510,7 +1516,7 @@
       </div>
     </section>
 
-    <section class="why-us-section">
+    <section class="why-us-section defer-visibility">
       <div class="container">
         <h2 class="section-title">🏆 Waarom Amsterdam West Kiest Voor Ons</h2>
         <div class="features-grid">
@@ -1554,7 +1560,7 @@
     </section>
 
     <!-- Additional SEO Content -->
-    <section class="seo-additional-content">
+    <section class="seo-additional-content defer-visibility">
       <div class="container">
         <div class="seo-lost-keys">
           <h2>🔐 Sleutels Kwijt? Complete Slotvervanging</h2>
@@ -1715,7 +1721,7 @@
     </section>
 
     <!-- Reviews Section -->
-    <section class="reviews-section">
+    <section class="reviews-section defer-visibility">
       <div class="container">
         <h2 class="section-title">⭐ Wat Klanten Zeggen</h2>
         <div class="reviews-grid">
@@ -1769,7 +1775,7 @@
       </div>
     </section>
 
-    <section class="contact-section">
+    <section class="contact-section defer-visibility">
       <div class="container">
         <h2 class="contact-title">🚨 NOODSITUATIE? BEL DIRECT!</h2>
 
