@@ -16,3 +16,16 @@
   to = "https://slotenmakeramsterdamwest.amsterdam/:splat"
   status = 301
   force = true
+
+# Block public access to opdrachtbon
+[[redirects]]
+  from = "/opdrachtbon"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/opdrachtbon/*"
+  to = "/404.html"
+  status = 404
+  force = true
