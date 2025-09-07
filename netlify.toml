@@ -17,7 +17,7 @@
   status = 301
   force = true
 
-# Block public access to opdrachtbon
+# Block public access to old path
 [[redirects]]
   from = "/opdrachtbon"
   to = "/404.html"
