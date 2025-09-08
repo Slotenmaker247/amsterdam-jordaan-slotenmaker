@@ -30,8 +30,4 @@
   status = 404
   force = true
 
-# Allow the secret page to be accessible (handled by Basic Auth in _headers)
-[[headers]]
-  for = "/opdrachtbonalleenvoormij.html"
-  [headers.values]
-    X-Robots-Tag = "noindex, nofollow, noarchive"
+## Secret page moved to separate project; remove special handling here
