@@ -2,9 +2,6 @@
   publish = "."
   command = ""
 
-[[plugins]]
-  package = "@netlify/plugin-minify-html"
-
 [[headers]]
   for = "/index.html"
   [headers.values]
